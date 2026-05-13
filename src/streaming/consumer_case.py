@@ -47,7 +47,7 @@ log_env_vars(LOG)
 
 # WHY: These defaults intentionally do not match .env.example.
 # If they appear in the log, copy .env.example to .env and try again.
-DEFAULT_TOPIC_NAME: Final[str] = "missing-env-copy-env-example"
+DEFAULT_TOPIC_NAME: Final[str] = "streaming-01-foundations-case"
 DEFAULT_MAX_MESSAGES: Final[str] = "2"
 DEFAULT_POLL_INTERVAL_SECONDS: Final[str] = "0.5"
 DEFAULT_TIMEOUT_SECONDS: Final[str] = "3.0"
