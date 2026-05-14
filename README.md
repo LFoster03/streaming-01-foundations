@@ -247,6 +247,40 @@ clear
 uv run python -m streaming.consumer_case
 ```
 
+### Technical Modification: Message Enrichment in Consumer
+
+In this project, I modified the consumer logic to enrich each streamed message
+as it is processed. Specifically, I updated the process_message() function
+in consumer_foster.py to add two new fields to each record:
+
+status: Indicates that the message has been successfully processed
+processed_time: Records the exact timestamp when the consumer handled the message
+
+#### Why This Change Matters
+
+This modification demonstrates a basic form of data enrichment
+in a streaming pipeline. Instead of simply passing data through,
+the consumer now adds metadata that improves traceability and auditability.
+
+In real-world data systems, this approach is commonly used for:
+
+- Tracking when data was processed
+- Monitoring pipeline performance
+- Supporting debugging and data quality checks
+- Enabling downstream analytics on processing latency
+
+#### Output
+
+The resulting output file (consumed_sales_modified.csv)
+now includes additional columns for each processed message,
+confirming that enrichment occurred during consumption.
+
+#### Observations
+
+The csv now includes when the data was processed.
+If multiple analysts are working with the same changing dataset,
+then they can see when others have already processed a message.
+
 </details>
 
 ## Notes
